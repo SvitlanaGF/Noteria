@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <img src="../static/img/Logo.png" alt="logo" class="logo">
+    </header>
+    <div class="welcome">
+        <h1>Register</h1></div>
+
+    <form class="reglog" method="post">
+        <input class="form_elem" type="text" name="us_name" id="us_name" placeholder="Name">
+        <input class="form_elem" type="email" id="us_email" name="us_email" placeholder="Email">
+        <input class="form_elem" type="password" id="password" name="name-password" placeholder="Password">
+        <input class="form_elem" type="password" id="password1" name="name-password1" placeholder="Password again">
+        <input class="form_elem button_" type="button" value="Register">
+        <a href="{% url 'login' %}">Already have an account?</a>
+    </form>
+</body>
+</html>
