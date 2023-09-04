@@ -16,8 +16,8 @@ class Notice(DetailView):
     context_object_name = "notice"
 
 
-# class CreateNotice(CreateView):
-#     model = Notation
-#     fields = '__all__'
-#     success_url = reverse_lazy("notes")
+class CreateNotice(CreateView):
+    model = Notation
+    fields = '__all__'
+    success_url = reverse_lazy("notes")
 #     # context_object_name = "create-notice"
