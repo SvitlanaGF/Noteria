@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+</head>
+<body>
+<h1>Notes</h1>
+    <main>
+{#    <a href="{% url 'create-notice' %}">Add Note</a>#}
+        <table>
+            <tr>
+                <th>Elem</th>
+                <th></th>
+            </tr>
+            {% for item in notes %}
+                <tr>
+                <td>{{ item }}</td>
+                    <td><a href="{% url 'notice' notice.id %}">View</a></td>
+                </tr>
+
+            {% empty %}
+                <h3>There isn`t notes.</h3>
+            {% endfor %}
+
+        </table>
+    </main>
+</body>
+</html>
