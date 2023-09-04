@@ -3,19 +3,19 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 def main(request):
-    return render(request, 'start.html')
+    return render(request, 'registration/start.html')
 
 
-def login(request):
+def Login(request):
     if request.method == 'POST':
         usname = request.POST.get("us_name")
         email = request.POST.get("us_email")
         password_ = request.POST.get("name-password")
         usr = authenticate(request, username=usname,email=email,password=password_)
         if usr is not None:
-            login(request, usr)
+            Login(request)
             return HttpResponseRedirect('Success!')
-    return render(request, 'login.html')
+    return render(request, 'registration/login.html')
 
 
 def register(request):
@@ -29,7 +29,7 @@ def register(request):
         usr = User.objects.create_user(username=usname, email=email, password=password_)
         usr.save()
         return redirect('login')
-    return render(request, 'register.html')
+    return render(request, 'registration/register.html')
 
 def Logout(request):
     logout(request)
