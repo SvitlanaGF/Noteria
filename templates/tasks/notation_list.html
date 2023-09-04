@@ -15,8 +15,8 @@
             </tr>
             {% for item in notes %}
                 <tr>
-                <td>{{ item }}</td>
-                    <td><a href="{% url 'notice' notice.id %}">View</a></td>
+                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'notice' item.id %}">View</a></td>
                 </tr>
 
             {% empty %}
