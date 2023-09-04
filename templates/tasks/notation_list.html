@@ -12,11 +12,15 @@
             <tr>
                 <th>Elem</th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
             {% for item in notes %}
                 <tr>
                     <td>{{ item.title }}</td>
                     <td><a href="{% url 'notice' item.id %}">View</a></td>
+                    <td><a href="{% url 'notice-edit' item.id %}">Edit</a></td>
+                    <td><a href="{% url 'notice-delete' item.id %}">Delete</a></td>
                 </tr>
 
             {% empty %}
