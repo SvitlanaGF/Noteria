@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../static/css/style.css">
-    <title>title</title>
+    <title>Noteria</title>
 </head>
 <body>
     <header>
         <img src="../../static/img/Logo.png" alt="logo" class="logo">
+        {% block header %} {% endblock header %}
     </header>
     {% if messages %}
         <ul class="messages">
