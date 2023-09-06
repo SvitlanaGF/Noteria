@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>title</title>
+</head>
+<body>
+    <header>
+        <img src="../../static/img/Logo.png" alt="logo" class="logo">
+    </header>
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

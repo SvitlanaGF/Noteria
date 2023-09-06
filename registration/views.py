@@ -1,21 +1,30 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 def main(request):
-    return render(request, 'registration/start.html')
+    return render(request, 'tasks/start.html')
 
 
 def Login(request):
     if request.method == 'POST':
         usname = request.POST.get("us_name")
-        email = request.POST.get("us_email")
+        # email = request.POST.get("us_email")
         password_ = request.POST.get("name-password")
-        usr = authenticate(request, username=usname,email=email,password=password_)
-        if usr is not None:
-            Login(request)
-            return HttpResponseRedirect('Success!')
-    return render(request, 'registration/login.html')
+        try:
+            user = User.objects.get(username= usname)
+        except:
+            messages.error(request, "User doesn't exist")
+        user = authenticate(request, username=usname, password=password_)
+        if user is not None:
+            login(request, user)
+            return redirect('notes')
+        else:
+            messages.error(request, "Wrong username or password")
+    context = {}
+    return render(request, 'tasks/log_reg.html', context)
 
 
 def register(request):
@@ -30,6 +39,7 @@ def register(request):
         usr.save()
         return redirect('login')
     return render(request, 'registration/register.html')
+
 
 def Logout(request):
     logout(request)

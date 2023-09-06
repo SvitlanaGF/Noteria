@@ -17,7 +17,9 @@
         <input class="form_elem" type="email" id="us_email" name="us_email" placeholder="Email">
         <input class="form_elem" type="password" id="password" name="name-password" placeholder="Password">
         <input class="form_elem" type="password" id="password1" name="name-password1" placeholder="Password again">
-        <input class="form_elem button_" type="button" value="Register">
+        {% if password == password1 %}
+            <input class="form_elem button_" onclick="window.location.href= {% url 'login' %}" type="button" value="Register">
+        {% endif %}
         <a href="{% url 'login' %}">Already have an account?</a>
     </form>
 </body>

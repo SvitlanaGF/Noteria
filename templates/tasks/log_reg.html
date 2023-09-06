@@ -1,0 +1,30 @@
+{% extends 'tasks/ref_log.html' %}
+{% block content %}
+    {% if page == 'login'%}
+    <div>
+        <div class="welcome">
+            <h1>Login</h1>
+        </div>
+        <form class="reglog" method="post" action="">
+            {% csrf_token %}
+            <input class="form_elem" type="text" id="us_name" name="us_name" placeholder="Username">
+            <input class="form_elem" type="password" id="password" name="name-password" placeholder="Password">
+            <input class="form_elem button_" type="submit" value="Login">
+            <a href="{% url 'register' %}">Don`t have an account.</a>
+        </form>
+    </div>
+    {% else %}
+    <div>
+        <div class="welcome">
+            <h1>Register</h1>
+        </div>
+        <form class="reglog" method="post" action="">
+            {% csrf_token %}
+            <input class="form_elem" type="text" id="us_name" name="us_name" placeholder="Username">
+            <input class="form_elem" type="password" id="password" name="name-password" placeholder="Password">
+            <input class="form_elem button_" type="submit" value="Register">
+            <a href="{% url 'login' %}">Don`t have an account.</a>
+        </form>
+    </div>
+    {% endif %}
+{% endblock content %}
