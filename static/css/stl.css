@@ -1,0 +1,112 @@
+html{
+    font-family: 'Brush Script MT', cursive;
+}
+
+.logo{
+            max-width: 75px;
+}
+
+.header{
+    width: auto;
+    position: static;
+    top: 0;
+}
+
+.right-header{
+    margin-top: 10px;
+    margin-right: 450px;
+    float: right;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+}
+
+.button_ {
+    align-items: center;
+    display: inline-block;
+    border-radius: 50px;
+    border: 0;
+    width: 300px;
+    height: 70px;
+    margin: 30px;
+    background-color: black;
+    font-size: 35px;
+    color: #38e87e;
+}
+
+.welcome{
+    display: flex;
+    align-items: center;
+}
+.main{
+    align-items: center;
+    font-size: 35px;
+}
+.button_:hover{
+    background-color: #38e87e;
+    color: black;
+    box-shadow: 4px 5px 8px 5px #5a6960;
+    text-align: center;
+
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    width: auto;
+    justify-content: center;
+    margin: 30px;
+}
+
+.reglog{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.form_elem{
+    border-radius: 45px;
+    width: 300px;
+    height: 40px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.button_a{
+    border-radius: 15px;
+    border: 0;
+    width: 200px;
+    height: 70px;
+    margin: 35px;
+    background-color: black;
+    font-size: 35px;
+    color: #38e87e;
+    margin-right: 0;
+}
+.button_a:hover{
+    background-color: #38e87e;
+    color: black;
+    box-shadow: 4px 5px 8px 5px #5a6960;
+    text-align: center;
+
+
+}
+.heading-text{
+    background-color: #38e87e;
+    padding-left:1000px;
+    padding-right: 1000px;
+    margin: 0;
+
+}
+.txt{
+    background-color: #a1f0bb;
+    padding-left: 1000px;
+    padding-right: 1000px;
+    margin: 0;
+}
+table{
+    border-spacing: 0;
+    width: 650px;
+}
+.one{
+    color: black;
+    margin-left: 50px;
+}
