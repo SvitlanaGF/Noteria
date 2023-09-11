@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Notes</title>
-</head>
-<body>
-{% if request.user.is_authenticated %}
-    <p>Nice to see you here, {{ request.user }}!</p>
-    <a href="">Logout</a>
-{% endif %}
-<a></a>
-<hr>
-<h1>Notes</h1>
+{% extends 'tasks/ref_log.html' %}
+{% block header %}
+      <b>Nice to see you here, {{ request.user }}!</b>
+    <a href="{% url 'logout' %}">Logout</a>
+{% endblock header %}
+
+{% block content %}
     <main>
-    <a href="{% url 'create-notice' %}">Add Note</a>
+    <a href="{% url 'create-notice' %}" class="button_a">Add Note</a>
+    <div class="reglog">
         <table>
-            <tr>
-                <th>Elem</th>
-                <th></th>
+            <tr class="heading-text">
+                <th><h1>Notes</h1></th>
                 <th></th>
                 <th></th>
             </tr>
             {% for item in notes %}
-                <tr>
-                    <td>{{ item.title }}</td>
-                    <td><a href="{% url 'notice' item.id %}">View</a></td>
-                    <td><a href="{% url 'notice-edit' item.id %}">Edit</a></td>
-                    <td><a href="{% url 'notice-delete' item.id %}">Delete</a></td>
+                <tr class="txt">
+                    <td><a href="{% url 'notice' item.id %}" class="one">{{ item.title }}</a></td>
+                    <td><a href="{% url 'notice-edit' item.id %}" class="button_a">Edit</a></td>
+                    <td><a href="{% url 'notice-delete' item.id %}" class="button_a">Delete</a></td>
                 </tr>
 
             {% empty %}
@@ -34,6 +26,6 @@
             {% endfor %}
 
         </table>
+    </div>
     </main>
-</body>
-</html>
+{% endblock content %}

@@ -7,7 +7,7 @@ from .models import Notation
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 
 def main(request):
@@ -52,9 +52,11 @@ def register(request):
     return render(request, 'tasks/log_reg.html', context)
 
 
-def Logout(request):
-    logout(request)
-    return redirect('main')
+# def Logout(request):
+#     logout(request)
+#     return redirect('main')
+
+
 
 class ListOfNotes(LoginRequiredMixin, ListView):
     model = Notation

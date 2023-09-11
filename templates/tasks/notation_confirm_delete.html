@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block content %}
+<div class="reglog">
     <form method="POST">
         {% csrf_token %}
         <p>Do you want to delete this notice?</p>
-        <input type="submit" value="Yes">
-        <input type="button" onclick="window.location.href= {% url 'notes' %}" value="No">
+        <input class='button_' type="submit" value="Yes">
+        <input class='button_' type="button" onclick="window.location.href= {% url 'notes' %}" value="No">
     </form>
-</body>
-</html>
+</div>
+{% endblock content %}

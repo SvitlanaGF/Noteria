@@ -1,7 +1,10 @@
 {% extends 'tasks/ref_log.html' %}
+{% block header %}
+    <b>Welcome to Noteria!</b>
+{% endblock header%}
 {% block content %}
     <div class="welcome">
-            <b>Welcome to Noteria!</b><br>
+            <b>Do you want:</b><br>
         </div>
         <div class="buttons">
             <button class="button_" onclick="window.location.href= {% url 'login' %}">Login</button>

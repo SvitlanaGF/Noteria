@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/stl.css">
     <title>Noteria</title>
 </head>
 <body>
-    <header>
-        <img src="../../static/img/Logo.png" alt="logo" class="logo">
+    <header class="header">
+        <a href="#" ><img src="../../static/img/Logo.png" alt="logo" class="logo"></a>
+    <div class="right-header">
         {% block header %} {% endblock header %}
+    </div>
     </header>
+
+    <hr>
+    <div class="main">
     {% if messages %}
         <ul class="messages">
         {% for message in messages %}
@@ -17,7 +22,10 @@
         {% endfor %}
         </ul>
     {% endif %}
+    <div class="container">
     {% block content %}
     {% endblock content %}
+    </div>
+    </div>
 </body>
 </html>

@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Create Notice</h1>
+{% extends 'tasks/ref_log.html' %}
+
+{% block header %}
+    <b>Create Notice</b>
+{% endblock header %}
+
+{% block content %}
 <main>
+    <div class="reglog txt">
     <form method="POST">
         {%   csrf_token %}
         {{ form.as_p }}
-            <input type="submit" value="Add">
+            <input class='button_' type="submit" value="Add">
     </form>
+    </div>
 </main>
-</body>
-</html>
+{% endblock content %}

@@ -1,10 +1,14 @@
 {% extends 'tasks/ref_log.html' %}
+{% block header %}
+    {% if page == 'login'%}
+         <b>Login</b>
+        {% else %}
+        <b>Register</b>
+    {% endif %}
+{% endblock header %}
 {% block content %}
     {% if page == 'login'%}
     <div>
-        <div class="welcome">
-            <h1>Login</h1>
-        </div>
         <form class="reglog" method="post" action="">
             {% csrf_token %}
             <input class="form_elem" type="text" id="us_name" name="us_name" placeholder="Username">
@@ -15,9 +19,6 @@
     </div>
     {% else %}
     <div>
-        <div class="welcome">
-            <h1>Register</h1>
-        </div>
         <form class="reglog" method="post" action="">
             {% csrf_token %}
             <input class="form_elem" type="text" id="us_name" name="us_name" placeholder="Username">

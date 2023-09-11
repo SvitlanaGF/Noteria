@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Notice</title>
-</head>
-<body>
-    <h1>Notice: {{ notice }}</h1>
+{% extends 'tasks/ref_log.html' %}
+{% block header %}
+    <b>Notice information</b>
+{% endblock header %}
+{% block content %}
+    <b>{{ notice.title }}</b>
+    <div class="reglog">
+        <b class="heading-text">Description:</b>
+        <p class="txt">{{ notice.description }}</p>
+        <input class='button_' onclick="window.location.href= {% url 'notes' %}" type="button" value="Back">
+    </div>
 
-</body>
-</html>
+{% endblock content %}
